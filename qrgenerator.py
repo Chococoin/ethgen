@@ -12,7 +12,7 @@ with open('CTOK000001.json', 'r') as data:
 
 json_data = json.loads(string_data)
 for x in json_data:
-    print(x + ":", json_data[x])
+    save(x + ":", json_data[x])
     pubkey = qrcode.make(x, image_factory = factory)
     prvkey = qrcode.make(json_data[x], image_factory = factory)
     if not os.path.exists("folder{}".format(index)):
